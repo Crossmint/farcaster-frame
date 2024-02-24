@@ -35,7 +35,7 @@ export const inputError = {
   ogTitle: "Error",
   buttons: [
     {
-      label: "Reload",
+      label: "Restart",
       action: "post",
     },
   ],
@@ -50,7 +50,7 @@ export const mintingError = {
   ogTitle: "Error",
   buttons: [
     {
-      label: "Reload",
+      label: "Restart",
       action: "post",
     },
   ],
@@ -65,7 +65,7 @@ export const unknownError = {
   ogTitle: "Error",
   buttons: [
     {
-      label: "Reload",
+      label: "Restart",
       action: "post",
     },
   ],
@@ -83,7 +83,7 @@ export const getInitialSuccess = (isEmail: boolean, env: string, data: any) => {
         },
 
         {
-          label: "Reload",
+          label: "Restart",
           action: "post",
         },
       ]
@@ -110,7 +110,7 @@ export const getPendingFrame = (action: string, actionId: string) => {
         action: "post",
       },
       {
-        label: "Reload",
+        label: "Restart",
         action: "post",
       },
     ],
@@ -133,11 +133,16 @@ export const getSuccessFrame = (data: any) => {
         action: "link",
         target: `${scannerUrl}`,
       },
+      {
+        label: "Restart",
+        action: "post",
+      },
     ],
     image: {
       src: `${process.env.NEXT_PUBLIC_URL}/success.jpg`,
       aspectRatio: "1:1",
     },
+    postUrl: `${process.env.NEXT_PUBLIC_URL}/api/frame?action=reload`,
   };
 };
 

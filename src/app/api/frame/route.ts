@@ -91,6 +91,8 @@ export async function POST(req: NextRequest): Promise<Response> {
 const handleError = (err: unknown) => {
   const error = err instanceof Error ? err.message : "";
 
+  console.log(error);
+
   switch (true) {
     case error.startsWith("Input Error"):
       return new NextResponse(getFrameHtmlResponse(inputError as any));
